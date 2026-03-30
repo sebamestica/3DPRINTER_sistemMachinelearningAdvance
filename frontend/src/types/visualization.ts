@@ -3,7 +3,8 @@ export type VisualMode =
   | 'transparent'
   | 'section'
   | 'exploded'
-  | 'internal-only';
+  | 'internal-only'
+  | 'wireframe';
 
 export interface CubeDimensions {
   width: number;

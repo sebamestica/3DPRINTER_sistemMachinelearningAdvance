@@ -16,7 +16,7 @@ export function CubeAssemblyScene({ parameters }: Props) {
   const cubeSize = 5;
 
   return (
-    <div className="relative h-[620px] w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 shadow-2xl">
+    <div className="relative h-[400px] sm:h-[500px] lg:h-full w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 shadow-2xl">
       {/* 1. Dimensions/Context Label */}
       <div className="absolute top-6 left-6 z-10 flex flex-col gap-1">
         <div className="flex items-center gap-2">

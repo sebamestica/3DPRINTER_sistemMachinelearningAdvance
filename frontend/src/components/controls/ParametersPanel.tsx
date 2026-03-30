@@ -1,4 +1,4 @@
-import { Thermometer, Layers, Box, Cpu, Package, Activity, Gauge, Briefcase, Eye, ShieldCheck, Ruler } from 'lucide-react';
+import { Thermometer, Layers, Box, Cpu, Package, Activity, Gauge, Briefcase, Eye, ShieldCheck, Ruler, AlertCircle } from 'lucide-react';
 import type { InputParameters, MaterialType, AnalysisMode } from '../../types/model';
 import { GEOMETRIES } from '../../data/geometries';
 import { VisualizationModeSelector } from './VisualizationModeSelector';
@@ -15,15 +15,15 @@ export function ParametersPanel({ parameters, onUpdate, isUpdating, onReset }: P
   const analysisModes: AnalysisMode[] = ['strength', 'absorption', 'balance'];
 
   return (
-    <div className="flex h-full flex-col gap-6 rounded-[2rem] border border-white/5 bg-zinc-900/40 p-7 shadow-2xl backdrop-blur-xl overflow-y-auto max-h-[85vh] scrollbar-hide">
+    <div className="flex h-full min-h-[500px] flex-col gap-6 rounded-[2rem] border border-white/5 bg-zinc-900/40 p-5 sm:p-7 shadow-2xl backdrop-blur-xl overflow-y-auto max-h-[70vh] lg:max-h-[85vh] scrollbar-hide">
       <div className="flex items-center justify-between sticky top-0 bg-zinc-900/10 backdrop-blur-sm z-10 pb-4 border-b border-white/5">
          <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-500/20 text-blue-400">
                <Cpu className="h-5 w-5" />
             </div>
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-white">Configuración del Prototipo</h3>
-              <p className="text-[10px] text-zinc-500 font-medium">Parámetros de Diseño Estructural</p>
+              <h3 className="text-sm font-bold uppercase tracking-wider text-white">Parámetros de fabricación</h3>
+              <p className="text-[10px] text-zinc-500 font-medium italic">Arquitectura interna y cinemática</p>
             </div>
          </div>
          <button 
@@ -130,6 +130,12 @@ export function ParametersPanel({ parameters, onUpdate, isUpdating, onReset }: P
               onChange={(e) => onUpdate({ internalPadding: parseFloat(e.target.value) })}
               className="h-1.5 w-full appearance-none rounded-lg bg-zinc-800 accent-blue-500 cursor-pointer"
             />
+            {parameters.internalPadding > 0.3 && (
+              <div className="flex items-start gap-2 p-3 rounded-xl bg-orange-500/5 border border-orange-500/10 text-[9px] text-orange-400 leading-tight italic">
+                 <AlertCircle className="h-3 w-3 shrink-0 mt-0.5" />
+                 Padding elevado reduce significativamente el volumen útil interno y la integridad estructural.
+              </div>
+            )}
           </div>
 
           <div className="grid grid-cols-2 gap-4">

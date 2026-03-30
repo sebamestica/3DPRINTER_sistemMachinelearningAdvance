@@ -1,4 +1,4 @@
-# Plan de Implementación Expreso: Cubo Estructural 3D - Decision Studio & Advanced Lab
+# Plan de Implementación: Cubo Estructural 3D - Asistente de Decisión Técnica
 
 Este documento detalla la hoja de ruta para la refactorización y elevación del frontend del proyecto de resistencia de materiales impresos en 3D. El objetivo es transformar una visualización conceptual en una herramienta técnica de toma de decisiones e inspección estructural.
 
@@ -6,14 +6,16 @@ Este documento detalla la hoja de ruta para la refactorización y elevación del
 
 ## 1. Visión y Objetivos
 
-### 1.1 El Cambio de Paradigma
-Pasamos de mostrar "patrones abstractos" a representar un **Cubo Estructural de 5x5x5 cm** completo. 
-- **Fidelidad**: El usuario debe sentir que manipula un prototipo digital real.
-- **Utilidad**: El software debe responder "¿Qué diseño es mejor para mi objetivo?" y "¿Cómo está construido internamente?".
+### 1.1 El Cambio de Paradigma: De Visor a Asistente de Decisión
+Pasamos de mostrar "patrones abstractos" a representar un **Cubo Estructural de 5x5x5 cm** y, lo más importante, a **traducir esos datos en decisiones de ingeniería**.
+- **Fidelidad**: El usuario manipula un prototipo digital real.
+- **Utilidad**: El software responde "¿Qué diseño es mejor?", "¿Por qué?", y "¿Qué debo fabricar?".
+- **Transparencia**: Distinción clara entre predicción de ML, interpretación geométrica y reglas heurísticas.
 
 ### 1.2 Módulos Principales
-1.  **Decision Studio (Modo Presentación)**: Enfocado en la comparación de alto nivel, selección de materiales/geometrías y lectura de resultados del backend.
-2.  **Advanced Lab (Modo Laboratorio)**: Enfocado en la inspección geométrica profunda, análisis de capas (slicing), métricas de conectividad y visualización de nodos.
+1.  **Decision Studio (Modo Presentación)**: Centro de mando para diseño, diagnóstico inmediato y selección de candidatos.
+2.  **Advanced Lab (Modo Laboratorio)**: Análisis profundo de topología, capas (slicing) y métricas de red.
+3.  **Candidate Manager**: Sistema para guardar, comparar y exportar configuraciones prometedoras.
 
 ---
 
@@ -82,44 +84,44 @@ Cálculo en tiempo real de:
 
 ---
 
-## 5. Integración con Backend e IA
+## 5. Inteligencia de Decisión y Producto Técnico
 
-### 5.1 Enlace de Predicción
-El sistema está diseñado para enviar los `InputParameters` a un endpoint de inferencia (modelo ML) y recibir:
-- **Resistencia Estimada (MPa)**.
-- **Deformación Relativa (mm)**.
-- **Score de Confianza**.
+### 5.1 Asistente de Decisión (Core)
+Un nuevo módulo que traduce parámetros y métricas en:
+- **Diagnóstico Preliminar**: Estado del diseño (Fuerte, Prometedor, Débil).
+- **Fortalezas y Riesgos**: Análisis heurístico de la arquitectura seleccionada.
+- **Siguiente Acción**: Sugerencias experimentales (ej. "Comparar con Gyroid").
 
-### 5.2 Motor de Recomendación
-Un engine en el frontend (`recommendationEngine.ts`) procesa el diseño actual y los resultados para generar una recomendación técnica textual, defendible académicamente.
+### 5.2 Ayuda Contextual
+Implementación de micro-explicaciones para evitar "configuración a ciegas":
+- ¿Qué es el padding? ¿Cómo influye el shell? ¿Por qué importa el modo de análisis?
+
+### 5.3 Resumen Exportable
+Generación de un informe técnico con la configuración seleccionada, justificación técnica y próximos pasos, ideal para documentación académica.
 
 ---
 
-## 6. Fases de Trabajo (Roadmap)
+## 6. Fases de Trabajo (Roadmap Actualizado)
 
-### Fase 1: Cimientos y Tipado (Inmediato)
-- Instalación de dependencias (Router).
-- Definición de tipos en `src/types/`.
-- Creación de la estructura de carpetas.
+### Fase 1: Cimientos de Decisión (Inmediato)
+- Definición de tipos en `src/types/decision.ts`.
+- Implementación de `decisionRules.ts` y el hook `useCandidateManager`.
 
-### Fase 2: Escena 3D Refactorizada
-- Implementación de `CubeAssemblyScene`.
-- Creación de `OuterShell` con modos de visualización.
-- Lógica de `InternalStructure` dentro del cubo.
+### Fase 2: Escena 3D y UI de Apoyo
+- Integración de ayudas contextuales en los sliders.
+- Creación de la `DecisionAssistantCard`.
 
-### Fase 3: Advanced Lab y Slicing
-- Desarrollo del modo seccionado y por capas.
-- Implementación del slider de inspección.
-- Panel de parámetros avanzados.
+### Fase 3: Gestión de Candidatos
+- Sistema de guardado y comparación dinámica de configuraciones.
+- Sección de comparación de candidatos en la Home.
 
-### Fase 4: Comparación y Decisiones
-- Refactorización de `ComparisonSection` para mostrar cubos completos.
-- Integración del scoring y recomendaciones refinadas.
+### Fase 4: Advanced Lab y Slicing (Refinamiento Técnico)
+- Herramientas de inspección por capas.
+- Métricas de conectividad y volumen real ocupado.
 
-### Fase 5: Pulido y Preparación Backend
-- Optimización de rendimiento.
-- Documentación técnica final.
-- Mock de conexión con backend real.
+### Fase 5: Cierre de Sesión y Exportación
+- Generación del `SessionSummary`.
+- Botón de exportación JSON/Texto.
 
 ---
 

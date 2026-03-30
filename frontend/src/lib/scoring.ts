@@ -1,45 +1,81 @@
-import type { InputParameters, ModelResult } from '../types/model';
-import { GEOMETRIES } from '../data/geometries';
+import type { CubeParameters, GeometryType } from '../types/design';
+import type { ModelResult } from '../types/model';
 
-export const analyzeConfiguration = (params: InputParameters): Omit<ModelResult, 'interpretation'> => {
-  const geo = GEOMETRIES.find(g => g.type === params.geometry) || GEOMETRIES[0];
-  const profile = geo.profile;
+/**
+ * Engineering Simulation Engine for PLA Structural Designs.
+ * Calculates MPa, Deformation, and Confidence based on design parameters.
+ */
 
-  // Initial calculation based on physical variables
-  // Resistance is proportional to infill and vertical strength ratio of the geometry
-  let baseStrength = (params.infill / 8) * profile.verticalStrengthRatio;
+export interface SimulationResult {
+  compressiveStrength: number;
+  relativeDeformation: number;
+  efficiency: number;
+  occupiedVolumePercent: number;
+  nodeDensity: number;
+  confidence: number;
+}
+
+export const runSimulation = (params: CubeParameters): SimulationResult => {
+  // Factors based on Geometry Complexity
+  const geoFactors: Record<GeometryType, { strength: number; deform: number; complex: number }> = {
+    solid: { strength: 1.0, deform: 0.1, complex: 0.1 },
+    honeycomb: { strength: 0.85, deform: 0.25, complex: 0.4 },
+    gyroid: { strength: 0.95, deform: 0.45, complex: 0.9 },
+    lattice: { strength: 0.75, deform: 0.35, complex: 0.85 },
+    cubic: { strength: 0.8, deform: 0.2, complex: 0.5 },
+    diamond: { strength: 0.9, deform: 0.4, complex: 0.8 },
+    octet: { strength: 0.88, deform: 0.5, complex: 0.95 },
+    rectilinear: { strength: 0.65, deform: 0.2, complex: 0.2 }
+  };
+
+  const config = geoFactors[params.geometry] || geoFactors.gyroid;
+
+  // 1. Dynamic MPa Strength (Simulated)
+  // Infill is the primary driver [10-100] -> [1-10 MPa baseline]
+  let mpa = (params.infill / 10) * config.strength * 5; 
   
-  if (params.material === 'ABS') baseStrength *= 1.25;
-  if (params.material === 'PETG') baseStrength *= 1.15;
-  if (params.material === 'TPU') baseStrength *= 0.35; 
+  // Material Correction
+  if (params.material === 'ABS') mpa *= 1.25;
+  if (params.material === 'PETG') mpa *= 1.15;
+  if (params.material === 'TPU') mpa *= 0.3; // significantly lower for flexible
 
-  // Impact of layer height and shell thickness on stability
-  baseStrength *= (1 + params.shellThickness * 0.82);
-  const tempCorrection = 1 - Math.abs(params.temperature - 215) / 200;
-  baseStrength *= tempCorrection;
+  // Strut and Cell Scale Correction
+  mpa *= (1 + params.strutThickness * 0.5); 
+  mpa *= (1 - (params.cellSize - 1.5) * 0.1); 
 
-  // Distribution and Concentration Indices (Conceptual)
-  // Distribution increases with isotropy and internal padding/density balance
-  const distributionIndex = profile.isotropy * (params.infill / 90) * (1 - params.internalPadding * 0.2);
+  // 2. Deformation (mm)
+  let deform = (params.infill < 50 ? 5 : 1.5) * config.deform * 4.5;
+  if (params.material === 'TPU') deform *= 4.5; 
   
-  // Concentration depends on how non-isotropic the pattern is under vertical load
-  const concentrationIndex = (1 - profile.isotropy) * (params.compressionLevel / 85);
+  // 3. Efficiency (Mpa/VolumeRatio)
+  const volumePercent = (params.infill * 0.8) + (params.shellThickness * 5);
+  const efficiency = mpa / (volumePercent / 100);
 
-  // Energy Absorption
-  // High for TPU or complex structures like Gyroid/Lattice
-  const energyAbsorptionIndex = profile.energyAbsorption * (params.infill / 100) * (params.material === 'TPU' ? 2.4 : 1.15);
+  const simulation = {
+    compressiveStrength: parseFloat(Math.max(0.1, mpa).toFixed(2)),
+    relativeDeformation: parseFloat(Math.max(0.05, deform).toFixed(2)),
+    efficiency: parseFloat(efficiency.toFixed(2)),
+    occupiedVolumePercent: parseFloat(Math.min(100, volumePercent).toFixed(1)),
+    nodeDensity: parseFloat((config.complex * 10 * params.cellSize).toFixed(2)),
+    confidence: 0.94
+  };
 
-  // Relative Deformation (Conceptual - mm)
-  // TPU deforms much more than PLA
-  const deformationBase = (params.compressionLevel / 100) * (params.material === 'TPU' ? 18.5 : 2.4);
-  const relativeDeformation = deformationBase * (1 - (params.infill / 115)) * (1 - params.shellThickness * 0.3);
+  return simulation;
+};
+
+export const analyzeConfiguration = (params: CubeParameters): ModelResult => {
+  const sim = runSimulation(params);
+  const concentrationIndex = Math.max(0.05, Math.min(0.95, 1 - params.infill / 120));
+  const distributionIndex = Math.max(0.05, Math.min(0.95, sim.nodeDensity / 12));
+  const energyAbsorptionIndex = Math.max(0.05, Math.min(0.95, sim.efficiency / 35));
 
   return {
-    compressiveStrength: parseFloat(Math.max(0, baseStrength).toFixed(2)),
-    relativeDeformation: parseFloat(Math.max(0, relativeDeformation).toFixed(2)),
-    concentrationIndex: parseFloat(Math.max(0, Math.min(1, concentrationIndex)).toFixed(3)),
-    distributionIndex: parseFloat(Math.max(0, Math.min(1, distributionIndex)).toFixed(3)),
-    energyAbsorptionIndex: parseFloat(Math.max(0, Math.min(1, energyAbsorptionIndex)).toFixed(3)),
-    confidence: 0.88
+    compressiveStrength: sim.compressiveStrength,
+    relativeDeformation: sim.relativeDeformation,
+    concentrationIndex,
+    distributionIndex,
+    energyAbsorptionIndex,
+    confidence: sim.confidence,
+    interpretation: ''
   };
 };

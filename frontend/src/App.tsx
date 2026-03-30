@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
-import { AdvancedLabPage } from './pages/AdvancedLabPage';
+import { AdvancedLabPage } from './pages/lab/AdvancedLabPage';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/advanced" element={<AdvancedLabPage />} />
+      <Route path="/lab" element={<AdvancedLabPage />} />
     </Routes>
   );
 }
