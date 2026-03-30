@@ -1,0 +1,3 @@
+Model,Split,R2,MAE,RMSE,MAPE_pct
+GradientBoostingRegressor,test,0.9733,0.3925,0.4953,15.4
+GradientBoostingRegressor,train,0.9999,0.0487,,

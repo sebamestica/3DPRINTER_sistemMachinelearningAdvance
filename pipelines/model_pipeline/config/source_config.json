@@ -1,0 +1,8 @@
+{
+    "search_dirs": [
+        "../specimen_linkage/data/linked_dataset/",
+        "../specimen_linkage/artifacts/"
+    ],
+    "keywords": ["high_confidence", "hc", "linked"],
+    "prohibited": ["Tension", "data.csv"]
+}

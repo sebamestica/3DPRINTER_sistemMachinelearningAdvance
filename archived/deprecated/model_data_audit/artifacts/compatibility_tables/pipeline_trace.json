@@ -1,0 +1,158 @@
+{
+  "FDM_Dataset.csv": {
+    "pipeline_stage1_decision": {
+      "stage": "select_model_data",
+      "outcome": "EXCLUDED",
+      "reasons": [
+        "No column matching canonical target or synonyms found in first 100 rows of CSV"
+      ],
+      "found_targets": [],
+      "value_score": "high_value",
+      "reliability_score": "high_reliability"
+    },
+    "pipeline_stage2_decision": {
+      "stage": "select_model_data",
+      "outcome": "EXCLUDED",
+      "reasons": [
+        "No column matching canonical target or synonyms found in first 100 rows of CSV"
+      ],
+      "found_targets": [],
+      "value_score": "high_value",
+      "reliability_score": "high_reliability"
+    },
+    "csv_header_issue_detected": false,
+    "final_pipeline_outcome": "EXCLUDED"
+  },
+  "Compressivedata.csv": {
+    "pipeline_stage1_decision": {
+      "stage": "select_model_data",
+      "outcome": "EXCLUDED",
+      "reasons": [
+        "No column matching canonical target or synonyms found in first 100 rows of CSV"
+      ],
+      "found_targets": [],
+      "value_score": "medium_value",
+      "reliability_score": "medium_reliability"
+    },
+    "pipeline_stage2_decision": {
+      "stage": "select_model_data",
+      "outcome": "EXCLUDED",
+      "reasons": [
+        "No column matching canonical target or synonyms found in first 100 rows of CSV"
+      ],
+      "found_targets": [],
+      "value_score": "medium_value",
+      "reliability_score": "medium_reliability"
+    },
+    "csv_header_issue_detected": true,
+    "final_pipeline_outcome": "EXCLUDED"
+  },
+  "TensiondataB.csv": {
+    "pipeline_stage1_decision": {
+      "stage": "select_model_data",
+      "outcome": "PASSED",
+      "reasons": [],
+      "found_targets": [
+        "stress[mpa]"
+      ],
+      "value_score": "medium_value",
+      "reliability_score": "high_reliability"
+    },
+    "pipeline_stage2_decision": {
+      "stage": "validate_experimental_compatibility",
+      "outcome": "EXCLUDED",
+      "reasons": [
+        "validate_experimental_compatibility: name contains 'Tension' → excluded as tension test"
+      ],
+      "found_targets": [
+        "stress[mpa]"
+      ],
+      "value_score": "medium_value",
+      "reliability_score": "high_reliability"
+    },
+    "csv_header_issue_detected": false,
+    "final_pipeline_outcome": "EXCLUDED"
+  },
+  "Propiedades_Extraidas.csv": {
+    "pipeline_stage1_decision": {
+      "stage": "select_model_data",
+      "outcome": "EXCLUDED",
+      "reasons": [
+        "reliability_score=low_reliability triggered exclusion rule"
+      ],
+      "found_targets": [
+        "max_force"
+      ],
+      "value_score": "high_value",
+      "reliability_score": "low_reliability"
+    },
+    "pipeline_stage2_decision": {
+      "stage": "select_model_data",
+      "outcome": "EXCLUDED",
+      "reasons": [
+        "reliability_score=low_reliability triggered exclusion rule"
+      ],
+      "found_targets": [
+        "max_force"
+      ],
+      "value_score": "high_value",
+      "reliability_score": "low_reliability"
+    },
+    "csv_header_issue_detected": true,
+    "final_pipeline_outcome": "EXCLUDED"
+  },
+  "TensiondataA.csv": {
+    "pipeline_stage1_decision": {
+      "stage": "select_model_data",
+      "outcome": "EXCLUDED",
+      "reasons": [
+        "reliability_score=low_reliability triggered exclusion rule"
+      ],
+      "found_targets": [
+        "stress[mpa]"
+      ],
+      "value_score": "medium_value",
+      "reliability_score": "low_reliability"
+    },
+    "pipeline_stage2_decision": {
+      "stage": "select_model_data",
+      "outcome": "EXCLUDED",
+      "reasons": [
+        "reliability_score=low_reliability triggered exclusion rule"
+      ],
+      "found_targets": [
+        "stress[mpa]"
+      ],
+      "value_score": "medium_value",
+      "reliability_score": "low_reliability"
+    },
+    "csv_header_issue_detected": false,
+    "final_pipeline_outcome": "EXCLUDED"
+  },
+  "data.csv": {
+    "pipeline_stage1_decision": {
+      "stage": "select_model_data",
+      "outcome": "PASSED",
+      "reasons": [],
+      "found_targets": [
+        "tension_strenght"
+      ],
+      "value_score": "high_value",
+      "reliability_score": "high_reliability"
+    },
+    "pipeline_stage2_decision": {
+      "stage": "validate_experimental_compatibility",
+      "outcome": "PASSED_WITH_CAUTION",
+      "reasons": [
+        "validate_experimental_compatibility: generic tabular dataset → included with caution"
+      ],
+      "found_targets": [
+        "tension_strenght"
+      ],
+      "value_score": "high_value",
+      "reliability_score": "high_reliability"
+    },
+    "csv_header_issue_detected": false,
+    "final_pipeline_outcome": "PASSED_WITH_CAUTION"
+  }
+}

@@ -1,0 +1,10 @@
+Feature,Correlation,Strength
+compressive_strength_std,0.9872,Fuerte
+compressive_strength_mean,0.9306,Fuerte
+design_param_relative,0.7338,Fuerte
+design_param_numeric,0.6794,Media
+n_readings,-0.3534,Debil
+length,nan,Debil
+thickness,nan,Debil
+width,nan,Debil
+transverse_area,nan,Debil

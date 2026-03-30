@@ -1,0 +1,73 @@
+{
+  "candidate_A_compressive_only": {
+    "summary": {
+      "rows": 35,
+      "features": [
+        "structure_type"
+      ],
+      "target": "compressive_strength (max stress per specimen)",
+      "target_origin": "Aggregated from Compressivedata.csv per-specimen readings",
+      "source_datasets": [
+        "Compressivedata.csv"
+      ],
+      "warnings": [
+        "No process parameters (infill, layer height, etc.) — only structural type is available as feature.",
+        "Without process parameter linkage this dataset cannot explain manufacturing decisions.",
+        "Specimen IDs not linked to FDM_Dataset or data.csv — external join needed."
+      ],
+      "viability": "LOW for predictive modeling — insufficient features. Useful as descriptive analysis only."
+    },
+    "scoring": {
+      "rows": 35,
+      "rows_rating": "sufficient",
+      "n_useful_features": 1,
+      "features_rating": "insufficient",
+      "has_mechanical_validity_issues": false,
+      "mechanical_validity": "VALID",
+      "viability_raw": "LOW for predictive modeling — insufficient features. Useful as descriptive analysis only.",
+      "viability_rating": "LOW",
+      "target_correctness": "CORRECT"
+    }
+  },
+  "candidate_B_data_only": {
+    "summary": {
+      "rows": 50,
+      "features": [
+        "layer_height",
+        "wall_thickness",
+        "infill_density",
+        "infill_pattern",
+        "nozzle_temperature",
+        "bed_temperature",
+        "print_speed",
+        "material",
+        "fan_speed",
+        "roughness",
+        "elongation"
+      ],
+      "target": "compressive_strength (renamed from tension_strenght)",
+      "target_origin": "tension_strenght from data.csv — tensile, not compressive",
+      "source_datasets": [
+        "data.csv"
+      ],
+      "warnings": [
+        "tension_strenght measures TENSILE resistance, not compressive strength.",
+        "Renaming this column to compressive_strength is mechanically incorrect.",
+        "This is the exact base the previous pipeline used — 50 rows of tensile data labeled as compressive.",
+        "Valid as a tensile resistance predictor, NOT as a compressive strength predictor."
+      ],
+      "viability": "INVALID as compressive model. Valid as tensile resistance model if renamed correctly."
+    },
+    "scoring": {
+      "rows": 50,
+      "rows_rating": "sufficient",
+      "n_useful_features": 11,
+      "features_rating": "rich",
+      "has_mechanical_validity_issues": true,
+      "mechanical_validity": "INVALID",
+      "viability_raw": "INVALID as compressive model. Valid as tensile resistance model if renamed correctly.",
+      "viability_rating": "INVALID",
+      "target_correctness": "INCORRECT"
+    }
+  }
+}

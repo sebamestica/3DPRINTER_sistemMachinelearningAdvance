@@ -1,0 +1,62 @@
+{
+    "file_path": "c:\\dev\\PLA_3dPrinter_RESISTENCE\\data\\Proyecto_Machine_Learning\\data.csv",
+    "rows": 50,
+    "columns_count": 12,
+    "columns": [
+        "layer_height",
+        "wall_thickness",
+        "infill_density",
+        "infill_pattern",
+        "nozzle_temperature",
+        "bed_temperature",
+        "print_speed",
+        "material",
+        "fan_speed",
+        "roughness",
+        "tension_strenght",
+        "elongation"
+    ],
+    "dtypes": {
+        "layer_height": "float64",
+        "wall_thickness": "int64",
+        "infill_density": "int64",
+        "infill_pattern": "str",
+        "nozzle_temperature": "int64",
+        "bed_temperature": "int64",
+        "print_speed": "int64",
+        "material": "str",
+        "fan_speed": "int64",
+        "roughness": "int64",
+        "tension_strenght": "int64",
+        "elongation": "float64"
+    },
+    "null_percentages": {
+        "layer_height": 0.0,
+        "wall_thickness": 0.0,
+        "infill_density": 0.0,
+        "infill_pattern": 0.0,
+        "nozzle_temperature": 0.0,
+        "bed_temperature": 0.0,
+        "print_speed": 0.0,
+        "material": 0.0,
+        "fan_speed": 0.0,
+        "roughness": 0.0,
+        "tension_strenght": 0.0,
+        "elongation": 0.0
+    },
+    "unique_values_count": {
+        "layer_height": 5,
+        "wall_thickness": 10,
+        "infill_density": 9,
+        "infill_pattern": 2,
+        "nozzle_temperature": 9,
+        "bed_temperature": 5,
+        "print_speed": 3,
+        "material": 2,
+        "fan_speed": 5,
+        "roughness": 44,
+        "tension_strenght": 26,
+        "elongation": 27
+    },
+    "is_suspicious": false
+}

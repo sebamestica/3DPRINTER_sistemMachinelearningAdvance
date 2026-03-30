@@ -1,0 +1,162 @@
+2026-03-28 23:09:55,445 [INFO] ============================================================
+2026-03-28 23:09:55,446 [INFO]   MODEL DATA AUDIT — PLA_3dPrinter_RESISTENCE
+2026-03-28 23:09:55,446 [INFO] ============================================================
+2026-03-28 23:09:55,447 [INFO] 
+[1/7] Descubrimiento de datasets candidatos
+2026-03-28 23:09:55,447 [INFO] === FASE 1: Descubrimiento de datasets candidatos ===
+2026-03-28 23:09:55,455 [INFO]   Found: FDM_Dataset.csv | rows~50 | cols=20 | type=process_parameters
+2026-03-28 23:09:55,536 [INFO]   Found: Compressivedata.csv | rows~169686 | cols=12 | type=compressive
+2026-03-28 23:09:55,552 [INFO]   Found: TensiondataB.csv | rows~5514 | cols=10 | type=tension
+2026-03-28 23:09:55,578 [INFO]   Skipping duplicate candidate: Compressivedata.csv
+2026-03-28 23:09:55,581 [INFO]   Found: Propiedades_Extraidas.csv | rows~100 | cols=10 | type=tension_or_both
+2026-03-28 23:09:55,604 [INFO]   Found: TensiondataA.csv | rows~26228 | cols=19 | type=tension
+2026-03-28 23:09:55,604 [INFO]   Skipping duplicate candidate: TensiondataB.csv
+2026-03-28 23:09:55,608 [INFO]   Found: data.csv | rows~50 | cols=12 | type=tension_summary
+2026-03-28 23:09:55,610 [INFO] Descubrimiento completo: 6 datasets válidos en disco.
+2026-03-28 23:09:55,610 [INFO] 
+[2/7] Auditoría del target compressive_strength
+2026-03-28 23:09:55,611 [INFO] === FASE 2: Auditoría del target compressive_strength ===
+2026-03-28 23:09:55,614 [INFO]   FDM_Dataset.csv: verdict=no_valid_target | reason=Sin target directo, sinónimo aplicable ni derivación técnicamente válida.
+2026-03-28 23:09:55,620 [INFO]   Compressivedata.csv: verdict=no_valid_target | reason=Sin target directo, sinónimo aplicable ni derivación técnicamente válida.
+2026-03-28 23:09:55,626 [INFO]   TensiondataB.csv: verdict=direct_target | reason=Columna 'stress[mpa]' mapea directamente a compressive_strength.
+2026-03-28 23:09:55,629 [INFO]   Propiedades_Extraidas.csv: verdict=no_valid_target | reason=Dataset mezcla ensayos de tracción. 'max_force' no puede asumir representar comp
+2026-03-28 23:09:55,635 [INFO]   TensiondataA.csv: verdict=direct_target | reason=Columna 'stress[mpa]' mapea directamente a compressive_strength.
+2026-03-28 23:09:55,637 [INFO]   data.csv: verdict=no_valid_target | reason=Columna 'tension_strenght' mide resistencia a tracción, no compresión. Usarla co
+2026-03-28 23:09:55,639 [INFO] 
+[3/7] Trazabilidad de exclusiones en pipeline previa
+2026-03-28 23:09:55,640 [INFO] === FASE 3: Trazabilidad de exclusiones en la pipeline previa ===
+2026-03-28 23:09:55,660 [WARNING]   CSV header structure issue detected in Compressivedata.csv (possible multi-row header)
+2026-03-28 23:09:55,661 [WARNING]   CSV header structure issue detected in Propiedades_Extraidas.csv (possible multi-row header)
+2026-03-28 23:09:55,662 [INFO]   FDM_Dataset.csv: final=EXCLUDED | header_issue=False
+2026-03-28 23:09:55,663 [INFO]   Compressivedata.csv: final=EXCLUDED | header_issue=True
+2026-03-28 23:09:55,663 [INFO]   TensiondataB.csv: final=EXCLUDED | header_issue=False
+2026-03-28 23:09:55,664 [INFO]   Propiedades_Extraidas.csv: final=EXCLUDED | header_issue=True
+2026-03-28 23:09:55,664 [INFO]   TensiondataA.csv: final=EXCLUDED | header_issue=False
+2026-03-28 23:09:55,664 [INFO]   data.csv: final=PASSED_WITH_CAUTION | header_issue=False
+2026-03-28 23:09:55,665 [INFO]   Datasets que habrían pasado la pipeline: ['data.csv']
+2026-03-28 23:09:55,665 [INFO]   Datasets excluidos por la pipeline: ['FDM_Dataset.csv', 'Compressivedata.csv', 'TensiondataB.csv', 'Propiedades_Extraidas.csv', 'TensiondataA.csv']
+2026-03-28 23:09:55,667 [INFO] 
+[4/7] Evaluación de compatibilidad experimental
+2026-03-28 23:09:55,668 [INFO] === FASE 4: Evaluación de compatibilidad experimental real ===
+2026-03-28 23:09:55,677 [INFO]   FDM_Dataset.csv: compat=incompatible
+2026-03-28 23:09:55,685 [INFO]   Compressivedata.csv: compat=compatible
+2026-03-28 23:09:55,693 [INFO]   TensiondataB.csv: compat=incompatible
+2026-03-28 23:09:55,699 [INFO]   Propiedades_Extraidas.csv: compat=incompatible
+2026-03-28 23:09:55,708 [INFO]   TensiondataA.csv: compat=incompatible
+2026-03-28 23:09:55,713 [INFO]   data.csv: compat=incompatible
+2026-03-28 23:09:55,716 [INFO] 
+[5/7] Evaluación de derivación de target
+2026-03-28 23:09:55,716 [INFO] === Evaluación de derivación de target desde Compressivedata ===
+2026-03-28 23:09:55,725 [INFO]   Compressivedata aggregation possible: True
+2026-03-28 23:09:55,727 [INFO] 
+[6/7] Construcción de datasets candidatos
+2026-03-28 23:09:55,727 [INFO] === FASE 5: Construcción de datasets candidatos para modelado ===
+2026-03-28 23:09:55,734 [INFO]   Reading Compressivedata for per-specimen aggregation...
+2026-03-28 23:09:56,574 [INFO]   Compressivedata aggregated: 35 specimens, col='unnamed:_6'
+2026-03-28 23:09:56,623 [INFO]   Candidate A: 35 specimens (Compressivedata aggregated)
+2026-03-28 23:09:56,628 [INFO]   Candidate B: 50 rows (data.csv — tensile)
+2026-03-28 23:09:56,632 [INFO] 
+[7/7a] Comparación de candidatos
+2026-03-28 23:09:56,632 [INFO] === FASE 6: Comparación de datasets candidatos ===
+2026-03-28 23:09:56,633 [INFO]   candidate_A_compressive_only: rows=35 | features=1 | target=CORRECT | viability=LOW
+2026-03-28 23:09:56,634 [INFO]   candidate_B_data_only: rows=50 | features=11 | target=INCORRECT | viability=INVALID
+2026-03-28 23:09:56,636 [INFO] 
+[7/7b] Decisión final
+2026-03-28 23:09:56,636 [INFO] === FASE 7: Decisión final sobre el dataset de modelado ===
+2026-03-28 23:09:56,638 [INFO]   Decision: recommended=candidate_A_compressive_only | block=True
+2026-03-28 23:09:56,639 [INFO] 
+[Export] Generando reportes y artefactos
+2026-03-28 23:09:56,639 [INFO] === Exportando reportes y artefactos ===
+2026-03-28 23:09:56,648 [INFO]   Todos los reportes y artefactos exportados.
+2026-03-28 23:09:56,649 [INFO] 
+============================================================
+2026-03-28 23:09:56,650 [INFO]   AUDITORÍA COMPLETADA
+2026-03-28 23:09:56,650 [INFO]   Datasets descubiertos: 6
+2026-03-28 23:09:56,651 [INFO]   Datasets con target válido: 2
+2026-03-28 23:09:56,651 [INFO]   Candidatos de modelado construidos: 2
+2026-03-28 23:09:56,652 [INFO]   Bloqueo de modelado: True
+2026-03-28 23:09:56,652 [INFO]   Dataset recomendado: candidate_A_compressive_only
+2026-03-28 23:09:56,653 [INFO] ============================================================
+2026-03-28 23:09:56,653 [WARNING] 
+  >> BLOQUEO ACTIVO: The only mechanically correct compressive dataset (Compressivedata) lacks process parameter features. Modeling only on structure_type is technically valid but produces an impoverished model. The critical missing step is linking specimen IDs to their print parameters. This audit recommends building that linkage before training.
+2026-03-28 23:34:43,826 [INFO] ============================================================
+2026-03-28 23:34:43,827 [INFO]   MODEL DATA AUDIT — PLA_3dPrinter_RESISTENCE
+2026-03-28 23:34:43,827 [INFO] ============================================================
+2026-03-28 23:34:43,827 [INFO] 
+[1/7] Descubrimiento de datasets candidatos
+2026-03-28 23:34:43,827 [INFO] === FASE 1: Descubrimiento de datasets candidatos ===
+2026-03-28 23:34:43,833 [INFO]   Found: FDM_Dataset.csv | rows~50 | cols=20 | type=process_parameters
+2026-03-28 23:34:43,908 [INFO]   Found: Compressivedata.csv | rows~169686 | cols=12 | type=compressive
+2026-03-28 23:34:43,919 [INFO]   Found: TensiondataB.csv | rows~5514 | cols=10 | type=tension
+2026-03-28 23:34:43,919 [INFO]   Skipping duplicate candidate: Compressivedata.csv
+2026-03-28 23:34:43,923 [INFO]   Found: Propiedades_Extraidas.csv | rows~100 | cols=10 | type=tension_or_both
+2026-03-28 23:34:43,945 [INFO]   Found: TensiondataA.csv | rows~26228 | cols=19 | type=tension
+2026-03-28 23:34:43,945 [INFO]   Skipping duplicate candidate: TensiondataB.csv
+2026-03-28 23:34:43,948 [INFO]   Found: data.csv | rows~50 | cols=12 | type=tension_summary
+2026-03-28 23:34:43,950 [INFO] Descubrimiento completo: 6 datasets válidos en disco.
+2026-03-28 23:34:43,951 [INFO] 
+[2/7] Auditoría del target compressive_strength
+2026-03-28 23:34:43,951 [INFO] === FASE 2: Auditoría del target compressive_strength ===
+2026-03-28 23:34:43,953 [INFO]   FDM_Dataset.csv: verdict=no_valid_target | reason=Sin target directo, sinónimo aplicable ni derivación técnicamente válida.
+2026-03-28 23:34:43,959 [INFO]   Compressivedata.csv: verdict=no_valid_target | reason=Sin target directo, sinónimo aplicable ni derivación técnicamente válida.
+2026-03-28 23:34:43,964 [INFO]   TensiondataB.csv: verdict=direct_target | reason=Columna 'stress[mpa]' mapea directamente a compressive_strength.
+2026-03-28 23:34:43,966 [INFO]   Propiedades_Extraidas.csv: verdict=no_valid_target | reason=Dataset mezcla ensayos de tracción. 'max_force' no puede asumir representar comp
+2026-03-28 23:34:43,972 [INFO]   TensiondataA.csv: verdict=direct_target | reason=Columna 'stress[mpa]' mapea directamente a compressive_strength.
+2026-03-28 23:34:43,974 [INFO]   data.csv: verdict=no_valid_target | reason=Columna 'tension_strenght' mide resistencia a tracción, no compresión. Usarla co
+2026-03-28 23:34:43,976 [INFO] 
+[3/7] Trazabilidad de exclusiones en pipeline previa
+2026-03-28 23:34:43,977 [INFO] === FASE 3: Trazabilidad de exclusiones en la pipeline previa ===
+2026-03-28 23:34:44,000 [WARNING]   CSV header structure issue detected in Compressivedata.csv (possible multi-row header)
+2026-03-28 23:34:44,001 [WARNING]   CSV header structure issue detected in Propiedades_Extraidas.csv (possible multi-row header)
+2026-03-28 23:34:44,002 [INFO]   FDM_Dataset.csv: final=EXCLUDED | header_issue=False
+2026-03-28 23:34:44,002 [INFO]   Compressivedata.csv: final=EXCLUDED | header_issue=True
+2026-03-28 23:34:44,002 [INFO]   TensiondataB.csv: final=EXCLUDED | header_issue=False
+2026-03-28 23:34:44,003 [INFO]   Propiedades_Extraidas.csv: final=EXCLUDED | header_issue=True
+2026-03-28 23:34:44,003 [INFO]   TensiondataA.csv: final=EXCLUDED | header_issue=False
+2026-03-28 23:34:44,003 [INFO]   data.csv: final=PASSED_WITH_CAUTION | header_issue=False
+2026-03-28 23:34:44,004 [INFO]   Datasets que habrían pasado la pipeline: ['data.csv']
+2026-03-28 23:34:44,004 [INFO]   Datasets excluidos por la pipeline: ['FDM_Dataset.csv', 'Compressivedata.csv', 'TensiondataB.csv', 'Propiedades_Extraidas.csv', 'TensiondataA.csv']
+2026-03-28 23:34:44,006 [INFO] 
+[4/7] Evaluación de compatibilidad experimental
+2026-03-28 23:34:44,006 [INFO] === FASE 4: Evaluación de compatibilidad experimental real ===
+2026-03-28 23:34:44,014 [INFO]   FDM_Dataset.csv: compat=incompatible
+2026-03-28 23:34:44,023 [INFO]   Compressivedata.csv: compat=compatible
+2026-03-28 23:34:44,032 [INFO]   TensiondataB.csv: compat=incompatible
+2026-03-28 23:34:44,038 [INFO]   Propiedades_Extraidas.csv: compat=incompatible
+2026-03-28 23:34:44,048 [INFO]   TensiondataA.csv: compat=incompatible
+2026-03-28 23:34:44,052 [INFO]   data.csv: compat=incompatible
+2026-03-28 23:34:44,055 [INFO] 
+[5/7] Evaluación de derivación de target
+2026-03-28 23:34:44,055 [INFO] === Evaluación de derivación de target desde Compressivedata ===
+2026-03-28 23:34:44,064 [INFO]   Compressivedata aggregation possible: True
+2026-03-28 23:34:44,066 [INFO] 
+[6/7] Construcción de datasets candidatos
+2026-03-28 23:34:44,067 [INFO] === FASE 5: Construcción de datasets candidatos para modelado ===
+2026-03-28 23:34:44,072 [INFO]   Reading Compressivedata for per-specimen aggregation...
+2026-03-28 23:34:44,890 [INFO]   Compressivedata aggregated: 35 specimens, col='unnamed:_6'
+2026-03-28 23:34:44,921 [INFO]   Candidate A: 35 specimens (Compressivedata aggregated)
+2026-03-28 23:34:44,926 [INFO]   Candidate B: 50 rows (data.csv — tensile)
+2026-03-28 23:34:44,930 [INFO] 
+[7/7a] Comparación de candidatos
+2026-03-28 23:34:44,931 [INFO] === FASE 6: Comparación de datasets candidatos ===
+2026-03-28 23:34:44,931 [INFO]   candidate_A_compressive_only: rows=35 | features=1 | target=CORRECT | viability=LOW
+2026-03-28 23:34:44,931 [INFO]   candidate_B_data_only: rows=50 | features=11 | target=INCORRECT | viability=INVALID
+2026-03-28 23:34:44,933 [INFO] 
+[7/7b] Decisión final
+2026-03-28 23:34:44,934 [INFO] === FASE 7: Decisión final sobre el dataset de modelado ===
+2026-03-28 23:34:44,935 [INFO]   Decision: recommended=candidate_A_compressive_only | block=True
+2026-03-28 23:34:44,935 [INFO] 
+[Export] Generando reportes y artefactos
+2026-03-28 23:34:44,936 [INFO] === Exportando reportes y artefactos ===
+2026-03-28 23:34:44,944 [INFO]   Todos los reportes y artefactos exportados.
+2026-03-28 23:34:44,945 [INFO] 
+============================================================
+2026-03-28 23:34:44,945 [INFO]   AUDITORÍA COMPLETADA
+2026-03-28 23:34:44,945 [INFO]   Datasets descubiertos: 6
+2026-03-28 23:34:44,946 [INFO]   Datasets con target válido: 2
+2026-03-28 23:34:44,946 [INFO]   Candidatos de modelado construidos: 2
+2026-03-28 23:34:44,946 [INFO]   Bloqueo de modelado: True
+2026-03-28 23:34:44,947 [INFO]   Dataset recomendado: candidate_A_compressive_only
+2026-03-28 23:34:44,947 [INFO] ============================================================
+2026-03-28 23:34:44,947 [WARNING] 
+  >> BLOQUEO ACTIVO: The only mechanically correct compressive dataset (Compressivedata) lacks process parameter features. Modeling only on structure_type is technically valid but produces an impoverished model. The critical missing step is linking specimen IDs to their print parameters. This audit recommends building that linkage before training.

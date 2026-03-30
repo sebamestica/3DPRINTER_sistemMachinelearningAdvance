@@ -1,0 +1,54 @@
+{
+    "file_path": "c:\\dev\\PLA_3dPrinter_RESISTENCE\\data\\Ensayos_Mecanicos_Validos\\Propiedades_Extraidas.csv",
+    "rows": 100,
+    "columns_count": 10,
+    "columns": [
+        "File",
+        "Sheet",
+        "Max Force",
+        "MaxStrain",
+        "Modulo Young",
+        "MaxStrainExt",
+        "Length",
+        "Thickness",
+        "Width",
+        "Transverse area"
+    ],
+    "dtypes": {
+        "File": "str",
+        "Sheet": "str",
+        "Max Force": "float64",
+        "MaxStrain": "float64",
+        "Modulo Young": "float64",
+        "MaxStrainExt": "float64",
+        "Length": "float64",
+        "Thickness": "float64",
+        "Width": "float64",
+        "Transverse area": "float64"
+    },
+    "null_percentages": {
+        "File": 0.0,
+        "Sheet": 0.0,
+        "Max Force": 70.0,
+        "MaxStrain": 70.0,
+        "Modulo Young": 83.0,
+        "MaxStrainExt": 70.0,
+        "Length": 100.0,
+        "Thickness": 100.0,
+        "Width": 100.0,
+        "Transverse area": 100.0
+    },
+    "unique_values_count": {
+        "File": 3,
+        "Sheet": 98,
+        "Max Force": 30,
+        "MaxStrain": 30,
+        "Modulo Young": 17,
+        "MaxStrainExt": 30,
+        "Length": 0,
+        "Thickness": 0,
+        "Width": 0,
+        "Transverse area": 0
+    },
+    "is_suspicious": false
+}

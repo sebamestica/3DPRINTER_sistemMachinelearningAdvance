@@ -1,0 +1,64 @@
+2026-03-29 23:14:40,305 - INFO - INICIANDO FASE FINAL DE CONSOLIDACION Y MATRIZ DE DECISION
+2026-03-29 23:14:40,314 - INFO - FASE 1: Inventario del estado actual del proyecto
+2026-03-29 23:14:40,360 - INFO - Inventario completado: 7 modelos, 12 reportes pipeline
+2026-03-29 23:14:40,361 - INFO - FASE 2: Validacion rigurosa del modelo actual
+2026-03-29 23:14:41,364 - INFO - Modelo cargado: GradientBoostingRegressor desde ..\model_pipeline\artifacts\trained_models\GradientBoostingRegressor_deployment_ready.pkl
+2026-03-29 23:14:41,392 - INFO - Validacion completada: R2_test=0.9733, leakage_flags=3
+2026-03-29 23:14:41,393 - INFO - FASE 3: Validacion de estabilidad del modelo
+2026-03-29 23:14:45,765 - INFO -   CV k=3 x10: R2=0.860+/-0.241
+2026-03-29 23:14:53,347 - INFO -   CV k=5 x10: R2=0.891+/-0.123
+2026-03-29 23:15:03,882 - INFO -   CV k=7 x10: R2=0.884+/-0.149
+2026-03-29 23:15:03,883 - INFO -   Ejecutando Leave-One-Out por dataset pequeno...
+2026-03-29 23:15:05,528 - INFO -   LOO: R2=0.885, MAE=1.041
+2026-03-29 23:15:06,439 - INFO - Estabilidad evaluada: veredicto=inestable
+2026-03-29 23:15:06,440 - INFO - FASE 3.1: Validacion agrupada por estructura
+2026-03-29 23:15:06,583 - INFO - FASE 4: Analisis de senal de features
+2026-03-29 23:15:06,584 - ERROR - Master source no disponible para analisis de senal
+2026-03-29 23:15:06,585 - INFO - FASE 5: Analisis de la estructura del error
+2026-03-29 23:15:06,996 - INFO - FASE 6: Alineacion con los PDFs referenciales
+2026-03-29 23:15:06,998 - INFO - FASE 7: Matriz de Decision
+2026-03-29 23:15:07,273 - INFO - FASE 8: Snapshot final del proyecto
+2026-03-29 23:15:07,277 - INFO - CONSOLIDACION FINAL COMPLETADA EXITOSAMENTE. REVISAR DIRECTORIO reports/ PARA TOMA DE DECISIONES.
+2026-03-29 23:15:53,045 - INFO - INICIANDO FASE FINAL DE CONSOLIDACION Y MATRIZ DE DECISION
+2026-03-29 23:15:53,050 - INFO - FASE 1: Inventario del estado actual del proyecto
+2026-03-29 23:15:53,079 - INFO - Inventario completado: 7 modelos, 12 reportes pipeline
+2026-03-29 23:15:53,085 - INFO - FASE 2: Validacion rigurosa del modelo actual
+2026-03-29 23:15:53,324 - INFO - Modelo cargado: GradientBoostingRegressor desde ..\model_pipeline\artifacts\trained_models\GradientBoostingRegressor_deployment_ready.pkl
+2026-03-29 23:15:53,362 - INFO - Validacion completada: R2_test=0.9733, leakage_flags=3
+2026-03-29 23:15:53,363 - INFO - FASE 3: Validacion de estabilidad del modelo
+2026-03-29 23:15:58,296 - INFO -   CV k=3 x10: R2=0.860+/-0.241
+2026-03-29 23:16:05,709 - INFO -   CV k=5 x10: R2=0.891+/-0.123
+2026-03-29 23:16:15,393 - INFO -   CV k=7 x10: R2=0.884+/-0.149
+2026-03-29 23:16:15,394 - INFO -   Ejecutando Leave-One-Out por dataset pequeno...
+2026-03-29 23:16:16,747 - INFO -   LOO: R2=0.885, MAE=1.041
+2026-03-29 23:16:17,580 - INFO - Estabilidad evaluada: veredicto=inestable
+2026-03-29 23:16:17,580 - INFO - FASE 3.1: Validacion agrupada por estructura
+2026-03-29 23:16:17,596 - ERROR - Error critico en la fase decision_ready: name 'grouped_stats' is not defined
+2026-03-29 23:16:17,598 - ERROR - Traceback (most recent call last):
+  File "c:\dev\PLA_3dPrinter_RESISTENCE\decision_ready\run_decision_ready.py", line 43, in run_decision_ready_pipeline
+    grouped_results = run_grouped_validation(val_results, val_cfg, review_cfg, logger)
+  File "c:\dev\PLA_3dPrinter_RESISTENCE\decision_ready\src\run_grouped_validation.py", line 39, in run_grouped_validation
+    grouped_stats.append([name, len(group), f"{r2:.4f}", f"{mae:.4f}"])
+    ^^^^^^^^^^^^^
+NameError: name 'grouped_stats' is not defined
+
+2026-03-29 23:16:35,873 - INFO - INICIANDO FASE FINAL DE CONSOLIDACION Y MATRIZ DE DECISION
+2026-03-29 23:16:35,877 - INFO - FASE 1: Inventario del estado actual del proyecto
+2026-03-29 23:16:35,891 - INFO - Inventario completado: 7 modelos, 12 reportes pipeline
+2026-03-29 23:16:35,892 - INFO - FASE 2: Validacion rigurosa del modelo actual
+2026-03-29 23:16:36,066 - INFO - Modelo cargado: GradientBoostingRegressor desde ..\model_pipeline\artifacts\trained_models\GradientBoostingRegressor_deployment_ready.pkl
+2026-03-29 23:16:36,093 - INFO - Validacion completada: R2_test=0.9733, leakage_flags=3
+2026-03-29 23:16:36,094 - INFO - FASE 3: Validacion de estabilidad del modelo
+2026-03-29 23:16:40,105 - INFO -   CV k=3 x10: R2=0.860+/-0.241
+2026-03-29 23:16:46,970 - INFO -   CV k=5 x10: R2=0.891+/-0.123
+2026-03-29 23:16:56,783 - INFO -   CV k=7 x10: R2=0.884+/-0.149
+2026-03-29 23:16:56,783 - INFO -   Ejecutando Leave-One-Out por dataset pequeno...
+2026-03-29 23:16:58,285 - INFO -   LOO: R2=0.885, MAE=1.041
+2026-03-29 23:16:59,101 - INFO - Estabilidad evaluada: veredicto=inestable
+2026-03-29 23:16:59,102 - INFO - FASE 3.1: Validacion agrupada por estructura
+2026-03-29 23:16:59,224 - INFO - FASE 4: Analisis de senal de features
+2026-03-29 23:17:00,540 - INFO - FASE 5: Analisis de la estructura del error
+2026-03-29 23:17:00,815 - INFO - FASE 6: Alineacion con los PDFs referenciales
+2026-03-29 23:17:00,817 - INFO - FASE 7: Matriz de Decision
+2026-03-29 23:17:01,028 - INFO - FASE 8: Snapshot final del proyecto
+2026-03-29 23:17:01,032 - INFO - CONSOLIDACION FINAL COMPLETADA EXITOSAMENTE. REVISAR DIRECTORIO reports/ PARA TOMA DE DECISIONES.

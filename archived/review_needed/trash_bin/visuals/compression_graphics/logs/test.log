@@ -1,0 +1,16 @@
+2026-03-28 23:42:16,665 [INFO] === Descubrimiento de fuentes de compresión ===
+2026-03-28 23:42:16,671 [INFO]   specimen_linkage high_confidence: exists=True | has_target=True | has_forbidden=False
+2026-03-28 23:42:16,675 [INFO]   specimen_linkage expanded_with_caution: exists=True | has_target=True | has_forbidden=False
+2026-03-28 23:42:16,677 [INFO]   model_data_audit candidate_A: exists=True | has_target=True | has_forbidden=False
+2026-03-28 23:42:16,677 [WARNING]   FORBIDDEN source exists (will not be used): model_pipeline/data/model_input/raw_model_input.csv
+2026-03-28 23:42:16,678 [WARNING]   FORBIDDEN source exists (will not be used): model_data_audit/artifacts/candidate_targets/candidate_B_data_only.csv
+2026-03-28 23:42:16,678 [WARNING]   FORBIDDEN source exists (will not be used): Normalization/cleaned/data_cleaned.csv
+2026-03-28 23:42:16,699 [WARNING]   FORBIDDEN source exists (will not be used): Normalization/cleaned/TensiondataA_cleaned.csv
+2026-03-28 23:42:16,699 [WARNING]   FORBIDDEN source exists (will not be used): Normalization/cleaned/TensiondataB_cleaned.csv
+2026-03-28 23:42:16,701 [INFO] === Validación de fuentes de compresión ===
+2026-03-28 23:42:16,707 [INFO]   specimen_linkage_hc: VALID — selected as primary source
+2026-03-28 23:42:16,709 [INFO]   specimen_linkage_exp: VALID — available as fallback
+2026-03-28 23:42:16,711 [INFO]   audit_candidate_A: VALID — available as fallback
+2026-03-28 23:42:16,714 [INFO]   Source validation complete. Chosen: specimen_linkage_hc
+2026-03-28 23:42:16,715 [INFO] === Cargando dataset final: specimen_linkage_hc ===
+2026-03-28 23:42:16,718 [INFO]   Loaded: 35 rows × 17 cols

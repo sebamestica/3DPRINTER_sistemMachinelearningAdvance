@@ -1,0 +1,38 @@
+{
+  "FDM_Dataset.csv": {
+    "verdict": "incompatible",
+    "reasons": [
+      "No valid compressive target in process parameter dataset."
+    ]
+  },
+  "Compressivedata.csv": {
+    "verdict": "compatible",
+    "reasons": [
+      "Compressive test dataset with tabular structure."
+    ]
+  },
+  "TensiondataB.csv": {
+    "verdict": "incompatible",
+    "reasons": [
+      "Tension time-series: measures tension, not compression. Including as compressive_strength would confuse ensayo type."
+    ]
+  },
+  "Propiedades_Extraidas.csv": {
+    "verdict": "incompatible",
+    "reasons": [
+      "Propiedades_Extraidas: 69.3% null values. Compressivedata entries (majority of rows) have ALL property columns empty — properties were never extracted from the compressive data. Only TensiondataA entries have numeric values, and those are tensile properties."
+    ]
+  },
+  "TensiondataA.csv": {
+    "verdict": "incompatible",
+    "reasons": [
+      "Tension time-series: measures tension, not compression. Including as compressive_strength would confuse ensayo type."
+    ]
+  },
+  "data.csv": {
+    "verdict": "incompatible",
+    "reasons": [
+      "No valid compressive target in process parameter dataset."
+    ]
+  }
+}

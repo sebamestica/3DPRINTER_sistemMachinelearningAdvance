@@ -1,0 +1,21 @@
+{
+    "drop_columns": [
+        "time",
+        "unnamed",
+        "axial_displacement_error",
+        "raw_data",
+        "probeta",
+        "sheet",
+        "file",
+        "filename"
+    ],
+    "categorical_candidates": [
+        "material",
+        "infill_pattern",
+        "filament_type",
+        "material_type",
+        "microstructure"
+    ],
+    "numeric_imputation_strategy": "median",
+    "categorical_imputation_strategy": "most_frequent"
+}

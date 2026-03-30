@@ -1,0 +1,373 @@
+{
+  "n_generated": 23,
+  "n_failed": 0,
+  "entries": [
+    {
+      "filename": "Q01_missing_values_heatbar.png",
+      "path": "outputs\\quality\\Q01_missing_values_heatbar.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "specimen_id",
+        "structure_type",
+        "infill_pattern",
+        "design_param_numeric",
+        "design_param_relative",
+        "replica_letter",
+        "length",
+        "thickness",
+        "width",
+        "transverse_area",
+        "compressive_strength",
+        "compressive_strength_mean",
+        "compressive_strength_std",
+        "n_readings",
+        "source_dataset",
+        "linkage_confidence",
+        "source_trace"
+      ],
+      "chart_type": "barh_horizontal",
+      "purpose": "¿Qué columnas tienen datos faltantes y en qué proporción?",
+      "status": "generated",
+      "notes": "Verde<20%, amarillo 20-80%, rojo>80%"
+    },
+    {
+      "filename": "Q02_valid_obs_per_column.png",
+      "path": "outputs\\quality\\Q02_valid_obs_per_column.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "specimen_id",
+        "structure_type",
+        "infill_pattern",
+        "design_param_numeric",
+        "design_param_relative",
+        "replica_letter",
+        "compressive_strength",
+        "compressive_strength_mean",
+        "compressive_strength_std",
+        "n_readings",
+        "source_dataset",
+        "linkage_confidence"
+      ],
+      "chart_type": "barplot",
+      "purpose": "¿Cuántas observaciones válidas tiene cada columna?",
+      "status": "generated",
+      "notes": ""
+    },
+    {
+      "filename": "Q03_linkage_confidence_distribution.png",
+      "path": "outputs\\quality\\Q03_linkage_confidence_distribution.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "linkage_confidence"
+      ],
+      "chart_type": "bar+pie",
+      "purpose": "¿Qué porcentaje del dataset tiene enlace probable vs exacto vs no resuelto?",
+      "status": "generated",
+      "notes": ""
+    },
+    {
+      "filename": "Q04_specimens_by_source.png",
+      "path": "outputs\\quality\\Q04_specimens_by_source.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "source_dataset"
+      ],
+      "chart_type": "barh_horizontal",
+      "purpose": "¿De qué dataset provienen los especímenes y cuántos hay?",
+      "status": "generated",
+      "notes": ""
+    },
+    {
+      "filename": "Q05_feature_completeness.png",
+      "path": "outputs\\quality\\Q05_feature_completeness.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "design_param_numeric",
+        "specimen_id",
+        "structure_type",
+        "infill_pattern",
+        "replica_letter",
+        "source_dataset",
+        "linkage_confidence",
+        "design_param_relative"
+      ],
+      "chart_type": "barh_horizontal",
+      "purpose": "¿Qué features tienen cobertura completa y cuáles son parciales?",
+      "status": "generated",
+      "notes": ""
+    },
+    {
+      "filename": "T01_target_histogram_kde.png",
+      "path": "outputs\\targets\\T01_target_histogram_kde.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "compressive_strength"
+      ],
+      "chart_type": "histogram+kde",
+      "purpose": "¿Cómo se distribuye el target? ¿Está sesgado? ¿Tiene buena variabilidad?",
+      "status": "generated",
+      "notes": ""
+    },
+    {
+      "filename": "T02_target_boxplot_ranges.png",
+      "path": "outputs\\targets\\T02_target_boxplot_ranges.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "compressive_strength"
+      ],
+      "chart_type": "boxplot+barplot",
+      "purpose": "¿Hay outliers? ¿Están bien cubiertos los rangos de resistencia?",
+      "status": "generated",
+      "notes": ""
+    },
+    {
+      "filename": "T03_target_qqplot.png",
+      "path": "outputs\\targets\\T03_target_qqplot.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "compressive_strength"
+      ],
+      "chart_type": "qqplot",
+      "purpose": "¿El target sigue distribución normal? Relevante para elección de modelo.",
+      "status": "generated",
+      "notes": ""
+    },
+    {
+      "filename": "T04_target_stats_summary.png",
+      "path": "outputs\\targets\\T04_target_stats_summary.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "compressive_strength"
+      ],
+      "chart_type": "text_summary",
+      "purpose": "Resumen estadístico completo del target en formato visual.",
+      "status": "generated",
+      "notes": ""
+    },
+    {
+      "filename": "R01_numeric_features_vs_target.png",
+      "path": "outputs\\relationships\\R01_numeric_features_vs_target.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "compressive_strength",
+        "design_param_numeric",
+        "design_param_relative"
+      ],
+      "chart_type": "scatter_grid",
+      "purpose": "¿Qué features numéricas muestran señal visual frente al target? ¿Hay no linealidades?",
+      "status": "generated",
+      "notes": ""
+    },
+    {
+      "filename": "R02_correlation_heatmap.png",
+      "path": "outputs\\relationships\\R02_correlation_heatmap.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "design_param_numeric",
+        "design_param_relative",
+        "length",
+        "thickness",
+        "width",
+        "transverse_area",
+        "compressive_strength"
+      ],
+      "chart_type": "heatmap_correlation",
+      "purpose": "¿Qué features están correlacionadas entre sí y con el target?",
+      "status": "generated",
+      "notes": "Excluye columnas post-ensayo"
+    },
+    {
+      "filename": "R03_design_param_vs_target_by_structure.png",
+      "path": "outputs\\relationships\\R03_design_param_vs_target_by_structure.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "design_param_numeric",
+        "compressive_strength",
+        "structure_type"
+      ],
+      "chart_type": "scatter_colored_by_category",
+      "purpose": "¿Cómo varía compressive_strength con el parámetro de diseño dentro de cada familia estructural?",
+      "status": "generated",
+      "notes": ""
+    },
+    {
+      "filename": "CST_boxplot_mean_by_structure_type.png",
+      "path": "outputs\\comparisons\\CST_boxplot_mean_by_structure_type.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "structure_type",
+        "compressive_strength"
+      ],
+      "chart_type": "boxplot+barplot_mean_std",
+      "purpose": "¿Difiere compressive_strength significativamente por structure_type?",
+      "status": "generated",
+      "notes": "n_groups=3"
+    },
+    {
+      "filename": "CIN_boxplot_mean_by_infill_pattern.png",
+      "path": "outputs\\comparisons\\CIN_boxplot_mean_by_infill_pattern.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "infill_pattern",
+        "compressive_strength"
+      ],
+      "chart_type": "boxplot+barplot_mean_std",
+      "purpose": "¿Difiere compressive_strength significativamente por infill_pattern?",
+      "status": "generated",
+      "notes": "n_groups=3"
+    },
+    {
+      "filename": "C03_target_by_structure_and_param.png",
+      "path": "outputs\\comparisons\\C03_target_by_structure_and_param.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "structure_type",
+        "design_param_numeric",
+        "compressive_strength"
+      ],
+      "chart_type": "boxplot_grouped",
+      "purpose": "¿Cómo interactúan tipo de estructura y parámetro de diseño en la resistencia?",
+      "status": "generated",
+      "notes": ""
+    },
+    {
+      "filename": "C04_replica_variability_cv.png",
+      "path": "outputs\\comparisons\\C04_replica_variability_cv.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "replica_letter",
+        "structure_type",
+        "design_param_numeric",
+        "compressive_strength"
+      ],
+      "chart_type": "barplot_cv",
+      "purpose": "¿Cuánta variabilidad hay entre réplicas de un mismo diseño? ¿Son reproducibles?",
+      "status": "generated",
+      "notes": "CV > 30% = alta variabilidad"
+    },
+    {
+      "filename": "L01_linkage_confidence_overview.png",
+      "path": "outputs\\linkage\\L01_linkage_confidence_overview.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "linkage_confidence"
+      ],
+      "chart_type": "bar+pie",
+      "purpose": "¿Qué porcentaje del dataset tiene linkage probable vs exacto vs no resuelto?",
+      "status": "generated",
+      "notes": ""
+    },
+    {
+      "filename": "L02_specimen_feature_completeness_heatmap.png",
+      "path": "outputs\\linkage\\L02_specimen_feature_completeness_heatmap.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "specimen_id",
+        "structure_type",
+        "infill_pattern",
+        "design_param_numeric",
+        "design_param_relative",
+        "replica_letter",
+        "length",
+        "thickness",
+        "width",
+        "transverse_area",
+        "compressive_strength_mean",
+        "compressive_strength_std",
+        "n_readings"
+      ],
+      "chart_type": "heatmap_binary",
+      "purpose": "¿Qué features están disponibles para cada probeta? ¿Hay probetas con cobertura parcial?",
+      "status": "generated",
+      "notes": ""
+    },
+    {
+      "filename": "L03_feature_availability_status.png",
+      "path": "outputs\\linkage\\L03_feature_availability_status.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "structure_type",
+        "infill_pattern",
+        "design_param_numeric",
+        "design_param_relative",
+        "replica_letter",
+        "material",
+        "layer_height",
+        "nozzle_temperature",
+        "print_speed",
+        "bed_temperature",
+        "cell_size_mm",
+        "wall_thickness_mm",
+        "strut_thickness_mm",
+        "print_orientation",
+        "length",
+        "thickness",
+        "width"
+      ],
+      "chart_type": "status_barchart",
+      "purpose": "¿Cuáles son las features deseadas disponibles, cuáles están vacías y cuáles faltan por completo?",
+      "status": "generated",
+      "notes": ""
+    },
+    {
+      "filename": "L04_readings_vs_strength_per_specimen.png",
+      "path": "outputs\\linkage\\L04_readings_vs_strength_per_specimen.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "specimen_id",
+        "n_readings",
+        "compressive_strength"
+      ],
+      "chart_type": "dual_axis_bar_line",
+      "purpose": "¿Cuántas lecturas respaldaron el valor de compressive_strength de cada probeta?",
+      "status": "generated",
+      "notes": "Más lecturas = mayor confiabilidad estadística del target"
+    },
+    {
+      "filename": "S01_executive_summary.png",
+      "path": "outputs\\summaries\\S01_executive_summary.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "compressive_strength",
+        "structure_type",
+        "design_param_numeric"
+      ],
+      "chart_type": "dashboard_static",
+      "purpose": "Resumen de alto nivel: distribución del target, comparación por estructura, señal de parámetro de diseño, completitud y readiness del dataset.",
+      "status": "generated",
+      "notes": "Figura resumen de 6 paneles"
+    },
+    {
+      "filename": "S02_feature_signal_summary.png",
+      "path": "outputs\\summaries\\S02_feature_signal_summary.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [
+        "design_param_numeric",
+        "structure_type",
+        "infill_pattern",
+        "design_param_relative",
+        "replica_letter",
+        "material",
+        "layer_height",
+        "nozzle_temperature",
+        "print_speed",
+        "cell_size_mm"
+      ],
+      "chart_type": "status_signal_barchart",
+      "purpose": "¿Qué features tienen señal útil? ¿Cuáles faltan? ¿Cuáles son redundantes?",
+      "status": "generated",
+      "notes": ""
+    },
+    {
+      "filename": "S03_dataset_limitations.png",
+      "path": "outputs\\summaries\\S03_dataset_limitations.png",
+      "dataset_source": "specimen_linkage/high_confidence_dataset.csv",
+      "columns_used": [],
+      "chart_type": "limitations_chart",
+      "purpose": "¿Qué limitaciones estructurales tiene el dataset? ¿Qué impide un modelo robusto?",
+      "status": "generated",
+      "notes": ""
+    }
+  ],
+  "failed": []
+}

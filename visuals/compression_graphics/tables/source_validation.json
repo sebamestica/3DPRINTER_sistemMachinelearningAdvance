@@ -1,0 +1,100 @@
+{
+  "specimen_linkage_hc": {
+    "source_id": "specimen_linkage_hc",
+    "label": "specimen_linkage high_confidence",
+    "path": "C:\\dev\\PLA_3dPrinter_RESISTENCE\\specimen_linkage\\data\\linked_dataset\\high_confidence_dataset.csv",
+    "checks": {
+      "file_exists": true,
+      "readable": true,
+      "has_target": true,
+      "tensile_free": true,
+      "has_traceability": true,
+      "target_null_pct": 0.0,
+      "target_has_values": true
+    },
+    "valid": true,
+    "rejection_reason": null,
+    "n_rows": 35,
+    "columns": [
+      "specimen_id",
+      "structure_type",
+      "infill_pattern",
+      "design_param_numeric",
+      "design_param_relative",
+      "replica_letter",
+      "length",
+      "thickness",
+      "width",
+      "transverse_area",
+      "compressive_strength",
+      "compressive_strength_mean",
+      "compressive_strength_std",
+      "n_readings",
+      "source_dataset",
+      "linkage_confidence",
+      "source_trace"
+    ]
+  },
+  "specimen_linkage_exp": {
+    "source_id": "specimen_linkage_exp",
+    "label": "specimen_linkage expanded_with_caution",
+    "path": "C:\\dev\\PLA_3dPrinter_RESISTENCE\\specimen_linkage\\data\\linked_dataset\\expanded_with_caution_dataset.csv",
+    "checks": {
+      "file_exists": true,
+      "readable": true,
+      "has_target": true,
+      "tensile_free": true,
+      "has_traceability": true,
+      "target_null_pct": 0.0,
+      "target_has_values": true
+    },
+    "valid": true,
+    "rejection_reason": null,
+    "n_rows": 35,
+    "columns": [
+      "specimen_id",
+      "structure_type",
+      "infill_pattern",
+      "design_param_numeric",
+      "design_param_relative",
+      "replica_letter",
+      "length",
+      "thickness",
+      "width",
+      "transverse_area",
+      "compressive_strength",
+      "compressive_strength_mean",
+      "compressive_strength_std",
+      "n_readings",
+      "source_dataset",
+      "linkage_confidence",
+      "source_trace"
+    ]
+  },
+  "audit_candidate_A": {
+    "source_id": "audit_candidate_A",
+    "label": "model_data_audit candidate_A",
+    "path": "C:\\dev\\PLA_3dPrinter_RESISTENCE\\model_data_audit\\artifacts\\candidate_targets\\candidate_A_compressive_only.csv",
+    "checks": {
+      "file_exists": true,
+      "readable": true,
+      "has_target": true,
+      "tensile_free": true,
+      "has_traceability": true,
+      "target_null_pct": 0.0,
+      "target_has_values": true
+    },
+    "valid": true,
+    "rejection_reason": null,
+    "n_rows": 35,
+    "columns": [
+      "specimen_id",
+      "structure_type",
+      "compressive_strength",
+      "compressive_strength_mean",
+      "compressive_strength_std",
+      "n_readings",
+      "source_dataset"
+    ]
+  }
+}

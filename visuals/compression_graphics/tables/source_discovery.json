@@ -1,0 +1,105 @@
+{
+  "candidates": [
+    {
+      "id": "specimen_linkage_hc",
+      "label": "specimen_linkage high_confidence",
+      "rel_path": "specimen_linkage/data/linked_dataset/high_confidence_dataset.csv",
+      "requires_col": "compressive_strength",
+      "forbidden_cols": [
+        "tension_strenght",
+        "elongation"
+      ],
+      "description": "35 compressive specimens aggregated from Compressivedata.csv with structure linkage.",
+      "path": "C:\\dev\\PLA_3dPrinter_RESISTENCE\\specimen_linkage\\data\\linked_dataset\\high_confidence_dataset.csv",
+      "exists": true,
+      "chosen": false,
+      "columns_sample": [
+        "specimen_id",
+        "structure_type",
+        "infill_pattern",
+        "design_param_numeric",
+        "design_param_relative",
+        "replica_letter",
+        "length",
+        "thickness",
+        "width",
+        "transverse_area",
+        "compressive_strength",
+        "compressive_strength_mean",
+        "compressive_strength_std",
+        "n_readings",
+        "source_dataset",
+        "linkage_confidence",
+        "source_trace"
+      ],
+      "has_required_col": true,
+      "has_forbidden_col": false
+    },
+    {
+      "id": "specimen_linkage_exp",
+      "label": "specimen_linkage expanded_with_caution",
+      "rel_path": "specimen_linkage/data/linked_dataset/expanded_with_caution_dataset.csv",
+      "requires_col": "compressive_strength",
+      "forbidden_cols": [
+        "tension_strenght",
+        "elongation"
+      ],
+      "description": "Same specimens as HC — expanded classification includes weak_link.",
+      "path": "C:\\dev\\PLA_3dPrinter_RESISTENCE\\specimen_linkage\\data\\linked_dataset\\expanded_with_caution_dataset.csv",
+      "exists": true,
+      "chosen": false,
+      "columns_sample": [
+        "specimen_id",
+        "structure_type",
+        "infill_pattern",
+        "design_param_numeric",
+        "design_param_relative",
+        "replica_letter",
+        "length",
+        "thickness",
+        "width",
+        "transverse_area",
+        "compressive_strength",
+        "compressive_strength_mean",
+        "compressive_strength_std",
+        "n_readings",
+        "source_dataset",
+        "linkage_confidence",
+        "source_trace"
+      ],
+      "has_required_col": true,
+      "has_forbidden_col": false
+    },
+    {
+      "id": "audit_candidate_A",
+      "label": "model_data_audit candidate_A",
+      "rel_path": "model_data_audit/artifacts/candidate_targets/candidate_A_compressive_only.csv",
+      "requires_col": "compressive_strength",
+      "forbidden_cols": [
+        "tension_strenght"
+      ],
+      "description": "Aggregated compressive specimens before linkage enrichment.",
+      "path": "C:\\dev\\PLA_3dPrinter_RESISTENCE\\model_data_audit\\artifacts\\candidate_targets\\candidate_A_compressive_only.csv",
+      "exists": true,
+      "chosen": false,
+      "columns_sample": [
+        "specimen_id",
+        "structure_type",
+        "compressive_strength",
+        "compressive_strength_mean",
+        "compressive_strength_std",
+        "n_readings",
+        "source_dataset"
+      ],
+      "has_required_col": true,
+      "has_forbidden_col": false
+    }
+  ],
+  "forbidden_found": [
+    "C:\\dev\\PLA_3dPrinter_RESISTENCE\\model_pipeline\\data\\model_input\\raw_model_input.csv",
+    "C:\\dev\\PLA_3dPrinter_RESISTENCE\\model_data_audit\\artifacts\\candidate_targets\\candidate_B_data_only.csv",
+    "C:\\dev\\PLA_3dPrinter_RESISTENCE\\Normalization\\cleaned\\data_cleaned.csv",
+    "C:\\dev\\PLA_3dPrinter_RESISTENCE\\Normalization\\cleaned\\TensiondataA_cleaned.csv",
+    "C:\\dev\\PLA_3dPrinter_RESISTENCE\\Normalization\\cleaned\\TensiondataB_cleaned.csv"
+  ]
+}

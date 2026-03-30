@@ -1,0 +1,22 @@
+{
+  "id_prefix_to_structure": {
+    "G":  "gyroid",
+    "H":  "honeycomb",
+    "T":  "triply_periodic",
+    "TQ": "triply_periodic",
+    "SOL": "solid"
+  },
+  "id_number_interpretation": {
+    "physical_meaning": "probable_design_param",
+    "candidates": ["relative_density_pct", "cell_size_mm", "strut_thickness_index"],
+    "confidence": "probable",
+    "note": "Exact physical meaning requires original experimental protocol. The number increases monotonically within each structure group, consistent with a density or size gradient."
+  },
+  "id_suffix_interpretation": {
+    "physical_meaning": "replica_letter",
+    "values": ["A", "B", "C", "D", "E"],
+    "confidence": "exact"
+  },
+  "min_features_high_confidence": 3,
+  "min_features_expanded": 2
+}

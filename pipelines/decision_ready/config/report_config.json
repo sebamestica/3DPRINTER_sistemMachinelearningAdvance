@@ -1,0 +1,22 @@
+{
+    "figure_dpi": 150,
+    "figure_format": "png",
+    "color_palette": {
+        "gyroid": "#2196F3",
+        "honeycomb": "#FF9800",
+        "triply_periodic": "#4CAF50"
+    },
+    "decision_axes": [
+        "dataset_validity",
+        "target_clarity",
+        "linkage_quality",
+        "feature_signal",
+        "model_stability",
+        "interpretability",
+        "sample_size",
+        "literature_alignment",
+        "utility_for_next_phase"
+    ],
+    "rating_scale": ["strong", "acceptable", "weak", "critical"],
+    "reference_pdfs_note": "PDFs are referenced conceptually only, never as training data"
+}

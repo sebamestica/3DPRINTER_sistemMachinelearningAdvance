@@ -1,0 +1,62 @@
+{
+    "file_path": "c:\\dev\\PLA_3dPrinter_RESISTENCE\\data\\Ensayos_Mecanicos_Validos\\Compressivedata.csv",
+    "rows": 1000,
+    "columns_count": 12,
+    "columns": [
+        "Raw data",
+        "Unnamed: 1",
+        "Unnamed: 2",
+        "Unnamed: 3",
+        "Unnamed: 4",
+        "Unnamed: 5",
+        "Unnamed: 6",
+        "Unnamed: 7",
+        "Unnamed: 8",
+        "Probeta",
+        "Raw data ",
+        "Raw Data"
+    ],
+    "dtypes": {
+        "Raw data": "float64",
+        "Unnamed: 1": "str",
+        "Unnamed: 2": "str",
+        "Unnamed: 3": "str",
+        "Unnamed: 4": "str",
+        "Unnamed: 5": "str",
+        "Unnamed: 6": "str",
+        "Unnamed: 7": "str",
+        "Unnamed: 8": "str",
+        "Probeta": "str",
+        "Raw data ": "float64",
+        "Raw Data": "float64"
+    },
+    "null_percentages": {
+        "Raw data": 0.1,
+        "Unnamed: 1": 0.0,
+        "Unnamed: 2": 0.0,
+        "Unnamed: 3": 0.0,
+        "Unnamed: 4": 0.0,
+        "Unnamed: 5": 0.0,
+        "Unnamed: 6": 0.0,
+        "Unnamed: 7": 0.0,
+        "Unnamed: 8": 99.5,
+        "Probeta": 0.0,
+        "Raw data ": 100.0,
+        "Raw Data": 100.0
+    },
+    "unique_values_count": {
+        "Raw data": 999,
+        "Unnamed: 1": 1000,
+        "Unnamed: 2": 1000,
+        "Unnamed: 3": 1000,
+        "Unnamed: 4": 1000,
+        "Unnamed: 5": 1000,
+        "Unnamed: 6": 1000,
+        "Unnamed: 7": 1000,
+        "Unnamed: 8": 5,
+        "Probeta": 1,
+        "Raw data ": 0,
+        "Raw Data": 0
+    },
+    "is_suspicious": false
+}

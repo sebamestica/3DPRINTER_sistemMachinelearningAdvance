@@ -1,0 +1,54 @@
+{
+    "file_path": "c:\\dev\\PLA_3dPrinter_RESISTENCE\\data\\Ensayos_Mecanicos_Validos\\TensiondataB.csv",
+    "rows": 1000,
+    "columns_count": 10,
+    "columns": [
+        "Unnamed: 0",
+        "Axial Force",
+        "Axial Displacement",
+        "Time",
+        "Axial Displacement Error",
+        "Axial 634.12F ",
+        "Strain [mm/mm]",
+        "Stress[MPa]",
+        "StrainExt[mm/mm]",
+        "Probeta"
+    ],
+    "dtypes": {
+        "Unnamed: 0": "int64",
+        "Axial Force": "float64",
+        "Axial Displacement": "float64",
+        "Time": "float64",
+        "Axial Displacement Error": "float64",
+        "Axial 634.12F ": "float64",
+        "Strain [mm/mm]": "float64",
+        "Stress[MPa]": "float64",
+        "StrainExt[mm/mm]": "float64",
+        "Probeta": "str"
+    },
+    "null_percentages": {
+        "Unnamed: 0": 0.0,
+        "Axial Force": 0.0,
+        "Axial Displacement": 0.0,
+        "Time": 0.0,
+        "Axial Displacement Error": 0.0,
+        "Axial 634.12F ": 0.0,
+        "Strain [mm/mm]": 0.0,
+        "Stress[MPa]": 0.0,
+        "StrainExt[mm/mm]": 0.0,
+        "Probeta": 0.0
+    },
+    "unique_values_count": {
+        "Unnamed: 0": 239,
+        "Axial Force": 1000,
+        "Axial Displacement": 1000,
+        "Time": 1000,
+        "Axial Displacement Error": 1000,
+        "Axial 634.12F ": 1000,
+        "Strain [mm/mm]": 1000,
+        "Stress[MPa]": 1000,
+        "StrainExt[mm/mm]": 1000,
+        "Probeta": 13
+    },
+    "is_suspicious": false
+}

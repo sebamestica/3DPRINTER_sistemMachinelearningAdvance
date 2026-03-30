@@ -1,0 +1,10 @@
+{
+    "cv_folds_options": [3, 5, 7],
+    "cv_repeats": 10,
+    "random_state": 42,
+    "stability_metrics": ["r2", "mae", "rmse"],
+    "group_columns": ["structure_type", "design_param_numeric"],
+    "permutation_n_repeats": 30,
+    "residual_bins": 5,
+    "min_fold_size": 3
+}

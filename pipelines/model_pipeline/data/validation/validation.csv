@@ -1,0 +1,5 @@
+structure_type,infill_pattern,design_param_numeric,design_param_relative,compressive_strength_mean,compressive_strength_std,n_readings,compressive_strength
+gyroid,gyroid,42,0.3939,3.471580183891122,3.3139984223595373,1407,9.398270786830356
+gyroid,gyroid,42,0.3939,4.398090258922336,3.3359133764051614,1286,9.22109375
+triply_periodic,triply_periodic,37,0.619,4.028722645573456,2.833909312176078,1265,7.719692925347222
+triply_periodic,triply_periodic,24,0.0,1.2469694825859627,0.4542796526625242,7836,2.779920006486917

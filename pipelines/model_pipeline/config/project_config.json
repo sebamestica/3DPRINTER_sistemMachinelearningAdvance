@@ -1,0 +1,6 @@
+{
+    "input_data_dir": "../normalization/cleaned/",
+    "eda_tables_dir": "../eda/tables/",
+    "eda_reports_dir": "../eda/reports/",
+    "normalization_registry": "../normalization/config/file_registry.json"
+}
