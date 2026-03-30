@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+dist/
+build/
+.env
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Artifacts/Gemini specific
+.gemini/
+.brain/
+tmp/
+artifacts/
+*.webp
+*.mp4

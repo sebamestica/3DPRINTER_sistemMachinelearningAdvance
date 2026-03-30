@@ -1,6 +1,0 @@
-original,new,status
-pipelines\decision_ready\logs\decision_ready.log,archived\review_needed\trash_bin\pipelines\decision_ready\logs\decision_ready.log,REMOVED_TO_REVIEW
-pipelines\model_pipeline\logs\pipeline.log,archived\review_needed\trash_bin\pipelines\model_pipeline\logs\pipeline.log,REMOVED_TO_REVIEW
-pipelines\specimen_linkage\logs\linkage.log,archived\review_needed\trash_bin\pipelines\specimen_linkage\logs\linkage.log,REMOVED_TO_REVIEW
-visuals\compression_graphics\logs\compression_graphics.log,archived\review_needed\trash_bin\visuals\compression_graphics\logs\compression_graphics.log,REMOVED_TO_REVIEW
-visuals\compression_graphics\logs\test.log,archived\review_needed\trash_bin\visuals\compression_graphics\logs\test.log,REMOVED_TO_REVIEW
